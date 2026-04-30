@@ -20,7 +20,7 @@
         }
         
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -91,7 +91,7 @@
         h2 {
             color: #667eea;
             font-size: 1.8em;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             padding-bottom: 10px;
             border-bottom: 2px solid #667eea;
         }
@@ -104,76 +104,126 @@
             margin-bottom: 0;
         }
         
-        .travel-text {
+        .travel-intro {
             font-size: 1.05em;
             line-height: 1.8;
             color: #555;
             margin-bottom: 15px;
         }
         
-        .trip {
-            margin-bottom: 30px;
-            padding: 20px;
-            background: #f8f9fa;
-            border-left: 4px solid #667eea;
-            border-radius: 5px;
+        .trips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
         }
         
-        .trip h3 {
+        .recent-trips {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 30px 0;
+            color: white;
+        }
+        
+        .recent-trips h2 {
+            color: white;
+            border-bottom-color: white;
+        }
+        
+        .recent-trips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .recent-trip {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            padding: 20px;
             color: #333;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .recent-trip:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .recent-trip h3 {
+            color: #667eea;
+            font-size: 1.2em;
             margin-bottom: 10px;
+        }
+        
+        .trip-year {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin-bottom: 10px;
+        }
+        
+        .recent-trip-description {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .trip-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 5px solid #667eea;
+        }
+        
+        .trip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .trip-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+        }
+        
+        .trip-header h3 {
+            font-size: 1.3em;
+            margin-bottom: 5px;
+        }
+        
+        .trip-body {
+            padding: 20px;
         }
         
         .trip-description {
             color: #555;
             margin-bottom: 15px;
             line-height: 1.7;
-        }
-        
-        .trip-links {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
+            font-size: 0.95em;
         }
         
         .trip-link {
             display: inline-block;
-            padding: 8px 16px;
+            padding: 10px 20px;
             background: #667eea;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            font-size: 0.95em;
+            font-size: 0.9em;
             transition: background 0.3s;
+            margin-right: 10px;
+            margin-bottom: 10px;
         }
         
         .trip-link:hover {
             background: #764ba2;
-        }
-        
-        .interests-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .interest-card {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 5px;
-            border-top: 4px solid #667eea;
-        }
-        
-        .interest-card h3 {
-            color: #667eea;
-            margin-bottom: 10px;
-        }
-        
-        .interest-card p {
-            color: #555;
-            font-size: 0.95em;
-            line-height: 1.6;
         }
         
         footer {
@@ -196,13 +246,8 @@
                 padding: 20px;
             }
             
-            .trip-links {
-                flex-direction: column;
-            }
-            
-            .trip-link {
-                width: 100%;
-                text-align: center;
+            .trips-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -221,93 +266,235 @@
             
             <section>
                 <h2>My Travel Journey</h2>
-                <p class="travel-text">
-                    Travel is one of my greatest passions. Whether exploring new cultures, discovering hidden gems in distant countries, or enjoying quality time with family, travel enriches my life and broadens my perspective. I believe that experiencing different places, people, and cuisines is essential to understanding our world and growing as individuals.
+                <p class="travel-intro">
+                    Travel is one of my greatest passions. From honeymoon adventures in Africa to exploring ancient history in Europe, each journey has enriched my life and broadened my perspective. I believe that experiencing different places, people, and cultures is essential to understanding our world and growing as individuals.
                 </p>
-                <p class="travel-text">
-                    My travel experiences range from adventure-filled expeditions to relaxing beach getaways. I'm always seeking opportunities to travel with my family, creating lasting memories and introducing my children to the diversity and beauty of our planet.
+                <p class="travel-intro">
+                    Below are some of my favorite travel experiences. Each blog captures the adventures, discoveries, and memorable moments from these journeys. Feel free to explore the detailed blog posts and photo galleries for each destination.
                 </p>
             </section>
             
             <section>
-                <h2>Notable Trips</h2>
+                <h2>My Travels</h2>
                 
-                <div class="trip">
-                    <h3>🌏 Southeast Asia</h3>
-                    <p class="trip-description">
-                        Immersive experiences across Thailand, Vietnam, and Cambodia. Exploring ancient temples, vibrant markets, and connecting with local communities while enjoying authentic cuisines.
-                    </p>
-                    <div class="trip-links">
-                        <a href="#" class="trip-link">View Photos</a>
-                        <a href="#" class="trip-link">Read Blog Post</a>
+                <div class="trips-grid">
+                    <!-- Active/Recent Blogs -->
+                    <div class="trip-card">
+                        <div class="trip-header">
+                            <h3>🦃 Turkey</h3>
+                        </div>
+                        <div class="trip-body">
+                            <p class="trip-description">
+                                Explored the rich history and vibrant culture of Turkey, from the stunning Blue Mosque and Topkapi Palace in Istanbul to the otherworldly landscapes of Cappadocia. Highlights included a thrilling hot air balloon ride over ancient rock formations, river canoeing, and discovering the historic Grand Bazaar. The trip combined architectural wonders, local flavors, and unforgettable experiences.
+                            </p>
+                            <a href="https://turkeybeans.blogspot.com/" target="_blank" class="trip-link">📖 Read Blog</a>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="trip">
-                    <h3>🏔️ European Adventures</h3>
-                    <p class="trip-description">
-                        Discovering the charm of European cities from Paris to Barcelona to Rome. Experiencing world-class museums, architecture, and culinary traditions across the continent.
-                    </p>
-                    <div class="trip-links">
-                        <a href="#" class="trip-link">View Photos</a>
-                        <a href="#" class="trip-link">Read Blog Post</a>
+                    
+                    <div class="trip-card">
+                        <div class="trip-header">
+                            <h3>❄️ Iceland</h3>
+                        </div>
+                        <div class="trip-body">
+                            <p class="trip-description">
+                                A multi-day adventure featuring biking around the Golden Circle, walking on glaciers, and chasing waterfalls. Experienced Iceland's geothermal wonders including Geysir geysers and bubbling mud pots at Lake Myvatn. Whale watching in the north, exploring dramatic fjords, and soaking in natural hot springs made this an unforgettable Nordic adventure.
+                            </p>
+                            <a href="https://icelandbeans.blogspot.com/" target="_blank" class="trip-link">📖 Read Blog</a>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="trip">
-                    <h3>🗽 North American Exploration</h3>
-                    <p class="trip-description">
-                        Road trips and adventures throughout the United States and Canada. From national parks to major cities, experiencing the diverse landscapes and cultures of North America.
-                    </p>
-                    <div class="trip-links">
-                        <a href="#" class="trip-link">View Photos</a>
-                        <a href="#" class="trip-link">Read Blog Post</a>
+                    
+                    <div class="trip-card">
+                        <div class="trip-header">
+                            <h3>🏛️ Hadrian's Wall & Scotland</h3>
+                        </div>
+                        <div class="trip-body">
+                            <p class="trip-description">
+                                A historic trek following Hadrian's Wall from Newcastle to the Scottish border, exploring Roman forts, ancient ruins, and medieval castles. The journey concluded in Scotland with visits to the Isle of Skye's dramatic landscapes, including the Old Man of Storr and the enchanting Fairy Glen. A perfect blend of history and breathtaking scenery.
+                            </p>
+                            <a href="https://hadriansbeans.blogspot.com/" target="_blank" class="trip-link">📖 Read Blog</a>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="trip">
-                    <h3>🏖️ Island Paradise</h3>
-                    <p class="trip-description">
-                        Relaxing tropical getaways to Caribbean and Pacific islands. Perfect family vacations combining beach time, water activities, and local island culture.
-                    </p>
-                    <div class="trip-links">
-                        <a href="#" class="trip-link">View Photos</a>
-                        <a href="#" class="trip-link">Read Blog Post</a>
+                    
+                    <!-- Archive Blogs -->
+                    <div class="trip-card">
+                        <div class="trip-header">
+                            <h3>🌍 East Africa Safari</h3>
+                        </div>
+                        <div class="trip-body">
+                            <p class="trip-description">
+                                An incredible honeymoon adventure through Kenya and Tanzania, featuring walking safaris in the Serengeti, wildlife encounters including lions and leopards, and exploring Zanzibar's historic Stone Town. Visited pristine islands, scuba dived in coral reefs, and enjoyed unforgettable moments in one of Africa's most beautiful regions.
+                            </p>
+                            <a href="https://safaribeans.blogspot.com/" target="_blank" class="trip-link">📖 Read Blog</a>
+                        </div>
                     </div>
-                </div>
-            </section>
-            
-            <section>
-                <h2>Why I Travel</h2>
-                <div class="interests-grid">
-                    <div class="interest-card">
-                        <h3>Cultural Immersion</h3>
-                        <p>Learning about different cultures, traditions, and ways of life helps me appreciate the diversity of our world and builds meaningful connections with people globally.</p>
+                    
+                    <div class="trip-card">
+                        <div class="trip-header">
+                            <h3>🎌 Tokyo & Japan</h3>
+                        </div>
+                        <div class="trip-body">
+                            <p class="trip-description">
+                                Discover the vibrant energy of Tokyo and the beauty of Japanese culture. From bustling city streets to serene temples, experience the perfect blend of modern technology and ancient traditions.
+                            </p>
+                            <a href="https://tokyobeans.blogspot.com/" target="_blank" class="trip-link">📖 Read Blog</a>
+                        </div>
                     </div>
-                    <div class="interest-card">
-                        <h3>Family Bonding</h3>
-                        <p>Traveling with my family creates unforgettable memories and shared experiences that strengthen our relationships and bonds.</p>
+                    
+                    <div class="trip-card">
+                        <div class="trip-header">
+                            <h3>🏮 China</h3>
+                        </div>
+                        <div class="trip-body">
+                            <p class="trip-description">
+                                Explore the vast landscapes and rich history of China, from the Great Wall to ancient temples and bustling modern cities.
+                            </p>
+                            <a href="https://chinabeans.blogspot.com/" target="_blank" class="trip-link">📖 Read Blog</a>
+                        </div>
                     </div>
-                    <div class="interest-card">
-                        <h3>Personal Growth</h3>
-                        <p>Stepping outside my comfort zone while traveling challenges me, expands my worldview, and contributes to continuous personal development.</p>
+                    
+                    <div class="trip-card">
+                        <div class="trip-header">
+                            <h3>🏝️ Southeast Asia Holiday (2009)</h3>
+                        </div>
+                        <div class="trip-body">
+                            <p class="trip-description">
+                                Early adventure across Southeast Asia, experiencing diverse cultures, cuisines, and landscapes across multiple countries.
+                            </p>
+                            <a href="https://asiabeans.blogspot.com/" target="_blank" class="trip-link">📖 Read Blog</a>
+                        </div>
                     </div>
-                    <div class="interest-card">
-                        <h3>Adventure</h3>
-                        <p>From hiking active volcanoes to exploring ancient ruins, travel provides thrilling adventures and unique experiences that invigorate the spirit.</p>
+                    
+                    <div class="trip-card">
+                        <div class="trip-header">
+                            <h3>🕌 India (2006)</h3>
+                        </div>
+                        <div class="trip-body">
+                            <p class="trip-description">
+                                An exploration of India's spiritual and cultural heritage, featuring temples, palaces, and the vibrant colors of Indian life.
+                            </p>
+                            <a href="https://indiabeans.blogspot.com/" target="_blank" class="trip-link">📖 Read Blog</a>
+                        </div>
                     </div>
-                </div>
-            </section>
-            
-            <section>
-                <h2>Travel Resources</h2>
-                <p class="travel-text">
-                    I enjoy documenting my travels and sharing travel tips and recommendations. Visit my travel blog for detailed posts about destinations, practical travel advice, and photo galleries from my adventures.
-                </p>
-                <div class="trip-links" style="margin-top: 20px;">
-                    <a href="#" class="trip-link">📸 Travel Photo Gallery</a>
-                    <a href="#" class="trip-link">✍️ Travel Blog</a>
-                    <a href="#" class="trip-link">🗺️ Destination Guides</a>
+                    
+                    <div class="trip-card">
+                        <div class="trip-header">
+                            <h3>🦁 African Safari</h3>
+                        </div>
+                        <div class="trip-body">
+                            <p class="trip-description">
+                                Experience the wildlife and natural wonders of Africa, with close encounters with lions, elephants, and other majestic creatures in their natural habitat.
+                            </p>
+                            <a href="https://safaribeans.blogspot.com/" target="_blank" class="trip-link">📖 Read Blog</a>
+                        </div>
+                    </div>
+                    
+                    <div class="trip-card">
+                        <div class="trip-header">
+                            <h3>🇬🇧 London</h3>
+                        </div>
+                        <div class="trip-body">
+                            <p class="trip-description">
+                                Discover the historic charm and modern energy of London, featuring iconic landmarks, museums, and the vibrant culture of England's capital.
+                            </p>
+                            <a href="https://londonbeans.blogspot.com/" target="_blank" class="trip-link">📖 Read Blog</a>
+                        </div>
+                    </div>
+                    
+                    <div class="trip-card">
+                        <div class="trip-header">
+                            <h3>🇳🇿 New Zealand</h3>
+                        </div>
+                        <div class="trip-body">
+                            <p class="trip-description">
+                                Experience the stunning landscapes of New Zealand, from dramatic fjords and mountain peaks to adventure activities and natural wonders.
+                            </p>
+                            <a href="https://nzbeans.blogspot.com/" target="_blank" class="trip-link">📖 Read Blog</a>
+                        </div>
+                    </div>
+                    
+                    <div class="trip-card">
+                        <div class="trip-header">
+                            <h3>🇧🇷 Brazil</h3>
+                        </div>
+                        <div class="trip-body">
+                            <p class="trip-description">
+                                Experience the vibrant culture, natural beauty, and energy of Brazil, from the Amazon to Rio de Janeiro's iconic landscapes.
+                            </p>
+                            <a href="https://brazilbeans.blogspot.com/" target="_blank" class="trip-link">📖 Read Blog</a>
+                        </div>
+                    </div>
+                    
+                    <div class="trip-card">
+                        <div class="trip-header">
+                            <h3>🇬🇹 Guatemala</h3>
+                        </div>
+                        <div class="trip-body">
+                            <p class="trip-description">
+                                Discover Guatemala's Mayan heritage, colorful colonial towns, volcanic landscapes, and rich indigenous cultures.
+                            </p>
+                            <a href="https://guatemalabeans.blogspot.com/" target="_blank" class="trip-link">📖 Read Blog</a>
+                        </div>
+                    </div>
+                    
+                    <div class="trip-card">
+                        <div class="trip-header">
+                            <h3>🇨🇷 Costa Rica</h3>
+                        </div>
+                        <div class="trip-body">
+                            <p class="trip-description">
+                                Experience the natural paradise of Costa Rica with its rainforests, wildlife, beaches, and the famous "pura vida" lifestyle.
+                            </p>
+                            <a href="https://costaricabeans.blogspot.com/" target="_blank" class="trip-link">📖 Read Blog</a>
+                        </div>
+                    </div>
+                    
+                    <div class="trip-card">
+                        <div class="trip-header">
+                            <h3>🦜 Ecuador & Galapagos</h3>
+                        </div>
+                        <div class="trip-body">
+                            <p class="trip-description">
+                                Journey through Ecuador and the unique Galapagos Islands, where you can see wildlife found nowhere else on Earth and explore one of the world's most biodiverse regions.
+                            </p>
+                            <a href="https://ecuadorbeans.blogspot.com/" target="_blank" class="trip-link">📖 Read Blog</a>
+                        </div>
+                    </div>
+                    
+                    <div class="trip-card">
+                        <div class="trip-header">
+                            <h3>🇵🇦 Panama</h3>
+                        </div>
+                        <div class="trip-body">
+                            <p class="trip-description">
+                                Explore Panama's rich history, the engineering marvel of the Panama Canal, tropical rainforests, and vibrant Caribbean culture.
+                            </p>
+                            <a href="https://panamabeans.blogspot.com/" target="_blank" class="trip-link">📖 Read Blog</a>
+                        </div>
+                    </div>
+                    
+                    <div class="trip-card">
+                        <div class="trip-header">
+                            <h3>🇩🇴 Dominican Republic</h3>
+                        </div>
+                        <div class="trip-body">
+                            <p class="trip-description">
+                                Relax and explore the beaches, mountains, and colonial history of the Dominican Republic, a Caribbean paradise.
+                            </p>
+                            <a href="https://dominicanbeans.blogspot.com/" target="_blank" class="trip-link">📖 Read Blog</a>
+                        </div>
+                    </div>
+                    
+                    <div class="trip-card">
+                        <div class="trip-header">
+                            <h3>🇮🇹 Italy & France</h3>
+                        </div>
+                        <div class="trip-body">
+                            <p class="trip-description">
+                                Experience the romance and charm of Europe's most iconic destinations, from Italian Renaissance art to French countryside elegance.
+                            </p>
+                            <a href="https://italyfrancebeans.blogspot.com/" target="_blank" class="trip-link">📖 Read Blog</a>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
