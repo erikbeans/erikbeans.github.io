@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel - Erik Beans</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: white;
+            border-radius: 10px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: #764ba2;
+        }
+        
+        .content {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+        }
+        
+        .back-link {
+            margin-bottom: 30px;
+        }
+        
+        .back-link a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .back-link a:hover {
+            color: #764ba2;
+        }
+        
+        h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        section {
+            margin-bottom: 40px;
+        }
+        
+        section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .travel-text {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        
+        .trip {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+        }
+        
+        .trip h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .trip-description {
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .trip-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .trip-link {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.95em;
+            transition: background 0.3s;
+        }
+        
+        .trip-link:hover {
+            background: #764ba2;
+        }
+        
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .interest-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            border-top: 4px solid #667eea;
+        }
+        
+        .interest-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .interest-card p {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        
+        footer {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 600px) {
+            header {
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .trip-links {
+                flex-direction: column;
+            }
+            
+            .trip-link {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Travel</h1>
+            <p class="tagline">Exploring the World with Family</p>
+        </header>
+        
+        <div class="content">
+            <div class="back-link">
+                <a href="index.html">← Back to Home</a>
+            </div>
+            
+            <section>
+                <h2>My Travel Journey</h2>
+                <p class="travel-text">
+                    Travel is one of my greatest passions. Whether exploring new cultures, discovering hidden gems in distant countries, or enjoying quality time with family, travel enriches my life and broadens my perspective. I believe that experiencing different places, people, and cuisines is essential to understanding our world and growing as individuals.
+                </p>
+                <p class="travel-text">
+                    My travel experiences range from adventure-filled expeditions to relaxing beach getaways. I'm always seeking opportunities to travel with my family, creating lasting memories and introducing my children to the diversity and beauty of our planet.
+                </p>
+            </section>
+            
+            <section>
+                <h2>Notable Trips</h2>
+                
+                <div class="trip">
+                    <h3>🌏 Southeast Asia</h3>
+                    <p class="trip-description">
+                        Immersive experiences across Thailand, Vietnam, and Cambodia. Exploring ancient temples, vibrant markets, and connecting with local communities while enjoying authentic cuisines.
+                    </p>
+                    <div class="trip-links">
+                        <a href="#" class="trip-link">View Photos</a>
+                        <a href="#" class="trip-link">Read Blog Post</a>
+                    </div>
+                </div>
+                
+                <div class="trip">
+                    <h3>🏔️ European Adventures</h3>
+                    <p class="trip-description">
+                        Discovering the charm of European cities from Paris to Barcelona to Rome. Experiencing world-class museums, architecture, and culinary traditions across the continent.
+                    </p>
+                    <div class="trip-links">
+                        <a href="#" class="trip-link">View Photos</a>
+                        <a href="#" class="trip-link">Read Blog Post</a>
+                    </div>
+                </div>
+                
+                <div class="trip">
+                    <h3>🗽 North American Exploration</h3>
+                    <p class="trip-description">
+                        Road trips and adventures throughout the United States and Canada. From national parks to major cities, experiencing the diverse landscapes and cultures of North America.
+                    </p>
+                    <div class="trip-links">
+                        <a href="#" class="trip-link">View Photos</a>
+                        <a href="#" class="trip-link">Read Blog Post</a>
+                    </div>
+                </div>
+                
+                <div class="trip">
+                    <h3>🏖️ Island Paradise</h3>
+                    <p class="trip-description">
+                        Relaxing tropical getaways to Caribbean and Pacific islands. Perfect family vacations combining beach time, water activities, and local island culture.
+                    </p>
+                    <div class="trip-links">
+                        <a href="#" class="trip-link">View Photos</a>
+                        <a href="#" class="trip-link">Read Blog Post</a>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <h2>Why I Travel</h2>
+                <div class="interests-grid">
+                    <div class="interest-card">
+                        <h3>Cultural Immersion</h3>
+                        <p>Learning about different cultures, traditions, and ways of life helps me appreciate the diversity of our world and builds meaningful connections with people globally.</p>
+                    </div>
+                    <div class="interest-card">
+                        <h3>Family Bonding</h3>
+                        <p>Traveling with my family creates unforgettable memories and shared experiences that strengthen our relationships and bonds.</p>
+                    </div>
+                    <div class="interest-card">
+                        <h3>Personal Growth</h3>
+                        <p>Stepping outside my comfort zone while traveling challenges me, expands my worldview, and contributes to continuous personal development.</p>
+                    </div>
+                    <div class="interest-card">
+                        <h3>Adventure</h3>
+                        <p>From hiking active volcanoes to exploring ancient ruins, travel provides thrilling adventures and unique experiences that invigorate the spirit.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <h2>Travel Resources</h2>
+                <p class="travel-text">
+                    I enjoy documenting my travels and sharing travel tips and recommendations. Visit my travel blog for detailed posts about destinations, practical travel advice, and photo galleries from my adventures.
+                </p>
+                <div class="trip-links" style="margin-top: 20px;">
+                    <a href="#" class="trip-link">📸 Travel Photo Gallery</a>
+                    <a href="#" class="trip-link">✍️ Travel Blog</a>
+                    <a href="#" class="trip-link">🗺️ Destination Guides</a>
+                </div>
+            </section>
+        </div>
+        
+        <footer>
+            <p>&copy; 2026 Erik Beans. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

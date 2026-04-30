@@ -65,6 +65,16 @@
             background: #764ba2;
         }
         
+        .headshot {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid #667eea;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
         .content {
             background: white;
             border-radius: 10px;
@@ -151,6 +161,17 @@
             font-weight: 500;
         }
         
+        .interest-tag a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            transition: opacity 0.3s;
+        }
+        
+        .interest-tag a:hover {
+            opacity: 0.8;
+        }
+        
         footer {
             text-align: center;
             color: white;
@@ -176,6 +197,7 @@
 <body>
     <div class="container">
         <header>
+            <img src="headshot.jpg" alt="Erik Beans" class="headshot">
             <h1>Erik Beans</h1>
             <p class="tagline">Engineering Leader | Entrepreneur</p>
             <div class="social-links">
@@ -261,6 +283,7 @@
                     <div class="interest-tag">Entrepreneurship</div>
                     <div class="interest-tag">Team Leadership</div>
                     <div class="interest-tag">Technology</div>
+                    <div class="interest-tag"><a href="travel.html">Travel</a></div>
                 </div>
             </section>
             
